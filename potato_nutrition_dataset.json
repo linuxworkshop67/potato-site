@@ -1,0 +1,140 @@
+{
+  "title": "Potato nutrition reference dataset",
+  "description": "Approximate nutrient values for potatoes per 100 g edible portion. Values vary by cultivar, cooking method, water loss, whether the skin is eaten, and source. Entries exclude added salt, oil, butter, sauces, and toppings unless the food name explicitly includes them.",
+  "unit_basis": "per 100 g edible portion",
+  "source_note": "Teaching dataset with approximate values. Verify values against USDA FoodData Central or another cited national food-composition database before publishing as authoritative nutrition information.",
+  "foods": [
+    {
+      "id": "potato_raw_flesh_skin",
+      "name": "Potato, raw, flesh and skin",
+      "preparation": "Raw",
+      "edible_portion": "Flesh and skin",
+      "nutrients_per_100g": {
+        "energy_kcal": 77,
+        "water_g": 79.3,
+        "carbohydrates_g": 17.5,
+        "sugars_g": 0.8,
+        "fiber_g": 2.1,
+        "protein_g": 2.0,
+        "fat_g": 0.1,
+        "vitamin_c_mg": 19.7,
+        "vitamin_b6_mg": 0.3,
+        "potassium_mg": 425,
+        "magnesium_mg": 23,
+        "phosphorus_mg": 57,
+        "iron_mg": 0.81,
+        "sodium_mg": 6
+      }
+    },
+    {
+      "id": "potato_boiled_skin",
+      "name": "Potato, boiled, flesh and skin, without salt",
+      "preparation": "Boiled",
+      "edible_portion": "Flesh and skin",
+      "nutrients_per_100g": {
+        "energy_kcal": 87,
+        "water_g": 77.5,
+        "carbohydrates_g": 20.1,
+        "sugars_g": 0.9,
+        "fiber_g": 1.8,
+        "protein_g": 1.9,
+        "fat_g": 0.1,
+        "vitamin_c_mg": 13.0,
+        "vitamin_b6_mg": 0.3,
+        "potassium_mg": 379,
+        "magnesium_mg": 22,
+        "phosphorus_mg": 44,
+        "iron_mg": 0.31,
+        "sodium_mg": 4
+      }
+    },
+    {
+      "id": "potato_baked_skin",
+      "name": "Potato, baked, flesh and skin, without salt",
+      "preparation": "Baked",
+      "edible_portion": "Flesh and skin",
+      "nutrients_per_100g": {
+        "energy_kcal": 93,
+        "water_g": 74.9,
+        "carbohydrates_g": 21.2,
+        "sugars_g": 1.0,
+        "fiber_g": 2.2,
+        "protein_g": 2.5,
+        "fat_g": 0.1,
+        "vitamin_c_mg": 9.6,
+        "vitamin_b6_mg": 0.31,
+        "potassium_mg": 535,
+        "magnesium_mg": 28,
+        "phosphorus_mg": 70,
+        "iron_mg": 1.08,
+        "sodium_mg": 10
+      }
+    },
+    {
+      "id": "potato_mashed_plain",
+      "name": "Potato, mashed, plain, no added butter or milk",
+      "preparation": "Mashed",
+      "edible_portion": "Prepared potato",
+      "nutrients_per_100g": {
+        "energy_kcal": 88,
+        "water_g": 77.0,
+        "carbohydrates_g": 20.0,
+        "sugars_g": 1.0,
+        "fiber_g": 1.8,
+        "protein_g": 1.8,
+        "fat_g": 0.1,
+        "vitamin_c_mg": 8.0,
+        "vitamin_b6_mg": 0.2,
+        "potassium_mg": 300,
+        "magnesium_mg": 20,
+        "phosphorus_mg": 40,
+        "iron_mg": 0.3,
+        "sodium_mg": 5
+      }
+    },
+    {
+      "id": "potato_fries",
+      "name": "Potato, french-fried",
+      "preparation": "Deep-fried",
+      "edible_portion": "Prepared fries",
+      "nutrients_per_100g": {
+        "energy_kcal": 312,
+        "water_g": 39.0,
+        "carbohydrates_g": 41.4,
+        "sugars_g": 0.3,
+        "fiber_g": 3.8,
+        "protein_g": 3.4,
+        "fat_g": 15.0,
+        "vitamin_c_mg": 4.0,
+        "vitamin_b6_mg": 0.3,
+        "potassium_mg": 579,
+        "magnesium_mg": 35,
+        "phosphorus_mg": 70,
+        "iron_mg": 0.8,
+        "sodium_mg": 210
+      }
+    },
+    {
+      "id": "potato_chips",
+      "name": "Potato chips, plain salted",
+      "preparation": "Fried and salted",
+      "edible_portion": "Prepared chips",
+      "nutrients_per_100g": {
+        "energy_kcal": 536,
+        "water_g": 1.9,
+        "carbohydrates_g": 53.0,
+        "sugars_g": 0.2,
+        "fiber_g": 4.4,
+        "protein_g": 7.0,
+        "fat_g": 34.6,
+        "vitamin_c_mg": 3.0,
+        "vitamin_b6_mg": 0.4,
+        "potassium_mg": 1275,
+        "magnesium_mg": 67,
+        "phosphorus_mg": 165,
+        "iron_mg": 1.6,
+        "sodium_mg": 525
+      }
+    }
+  ]
+}

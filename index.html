@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>potato_website_summary.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> or <div class="page"></div> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="page-tools" aria-label="Page display settings">
+  <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false">Switch to dark mode</button>
+</div>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="the-potato-a-comprehensive-overview">The Potato: A Comprehensive Overview</h1>
+<blockquote>
+<p><strong>Purpose:</strong> This document summarizes the Wikipedia article on the potato and organizes its information as source material for a future educational website. It is a secondary summary, not a substitute for specialist agricultural, nutritional, or food-safety guidance.</p>
+</blockquote>
+<p><strong>Primary source:</strong> <a href="https://en.wikipedia.org/wiki/Potato">Wikipedia — Potato</a><br>
+<strong>Source checked:</strong> 22 October 2026<br>
+<strong>Content note:</strong> Production figures and other time-sensitive facts should be rechecked before publication.</p>
+<h2 id="1-at-a-glance">1. At a glance</h2>
+<p>The potato (<em>Solanum tuberosum</em>) is a starchy crop plant in the nightshade family, Solanaceae. The edible part is a tuber: a swollen underground stem that stores nutrients, rather than a root. Originating in the Americas, potatoes were domesticated in the Andes of what is now southern Peru and northwestern Bolivia thousands of years ago. They later spread worldwide and became one of humanity's major staple foods.</p>
+<p>Potatoes are grown in thousands of varieties, differing in size, shape, skin and flesh color, starch content, texture, flavor, and culinary suitability. They are eaten boiled, baked, roasted, mashed, and fried, and are also used to produce starch, animal feed, and some distilled spirits. The plant's green parts and light-exposed or damaged tubers can contain elevated levels of toxic glycoalkaloids, so proper handling and storage matter.</p>
+<h3 id="key-facts">Key facts</h3>
+<ul>
+<li><strong>Common name:</strong> Potato; also called <em>spud</em> in English.</li>
+<li><strong>Scientific name:</strong> <em>Solanum tuberosum</em>.</li>
+<li><strong>Family:</strong> Solanaceae, the nightshade family.</li>
+<li><strong>Plant type:</strong> Herbaceous perennial, commonly cultivated as an annual crop.</li>
+<li><strong>Edible portion:</strong> Underground stem tuber.</li>
+<li><strong>Domestication region:</strong> Andes, especially southern Peru and northwestern Bolivia.</li>
+<li><strong>Domestication period:</strong> Approximately 7,000–10,000 years ago.</li>
+<li><strong>Diversity:</strong> Thousands of cultivated varieties; the article reports about 5,000 worldwide.</li>
+<li><strong>Main food role:</strong> Starchy staple used in cuisines across the world.</li>
+<li><strong>Important safety issue:</strong> Green or heavily sprouted potatoes may contain increased glycoalkaloids.</li>
+</ul>
+<h2 id="2-name-and-terminology">2. Name and terminology</h2>
+<p>The English word <em>potato</em> came through Spanish <em>patata</em>, which is associated with the Taíno word <em>batata</em>, originally referring to the sweet potato. The word <em>spud</em> was first associated with a short, stout digging knife or dagger; its use for the potato developed later.</p>
+<p>Useful terms:</p>
+<ul>
+<li><strong>Tuber:</strong> A swollen underground stem that stores energy and nutrients.</li>
+<li><strong>Eyes:</strong> Buds on the surface of a potato tuber from which new shoots can grow.</li>
+<li><strong>Stolons:</strong> Horizontal underground stems from which tubers develop.</li>
+<li><strong>Lenticels:</strong> Small pores on tuber surfaces that permit gas exchange.</li>
+<li><strong>Cultivar:</strong> A cultivated plant variety selected for particular characteristics.</li>
+<li><strong>Seed potato:</strong> A tuber grown and selected for planting; it is not necessarily a botanical seed.</li>
+<li><strong>New or baby potato:</strong> A young, immature tuber harvested while small and tender.</li>
+<li><strong>Hilling or earthing up:</strong> Mounding soil around the plant to cover developing tubers and protect them from light.</li>
+</ul>
+<h2 id="3-botanical-description-and-classification">3. Botanical description and classification</h2>
+<h3 id="plant-structure">Plant structure</h3>
+<p>Potato plants can grow to around one metre (three feet) tall. They have hairy stems and compound leaves with multiple leaflets. Their flowers can be white, pink, blue, or purple, often with yellow centers, and are pollinated by insects.</p>
+<p>The plant forms tubers at the ends of underground stolons. These tubers store nutrients for the plant. Their eyes are arranged in a spiral pattern and contain buds capable of producing shoots. Lenticels on the surface allow gas exchange. Under suitable conditions, the plant can also produce small green fruits resembling cherry tomatoes; these are not the edible potato tubers and should not be confused with them.</p>
+<h3 id="scientific-classification">Scientific classification</h3>
+<ul>
+<li><strong>Kingdom:</strong> Plantae</li>
+<li><strong>Clade:</strong> Tracheophytes</li>
+<li><strong>Clade:</strong> Angiosperms</li>
+<li><strong>Clade:</strong> Eudicots</li>
+<li><strong>Clade:</strong> Asterids</li>
+<li><strong>Order:</strong> Solanales</li>
+<li><strong>Family:</strong> Solanaceae</li>
+<li><strong>Genus:</strong> <em>Solanum</em></li>
+<li><strong>Species:</strong> <em>Solanum tuberosum</em></li>
+</ul>
+<p>The potato is related to tomatoes, peppers, and other members of Solanaceae. The family also contains plants that are toxic. The cultivated potato is only one member of a wider group of wild potato relatives, many of which are valuable sources of genetic diversity for crop improvement.</p>
+<h3 id="diversity-and-genetics">Diversity and genetics</h3>
+<p>The widely cultivated potato has complex genetics. The common cultivated form is generally tetraploid, with 48 chromosomes. Other cultivated potato species or groups can have different chromosome numbers and ploidy levels. Andean and Chilean potato populations have adaptations to different day-length conditions.</p>
+<p>Potato genetic diversity is especially rich in South America. Wild relatives can provide traits useful for breeding, including resistance to diseases and pests. Modern breeding includes conventional selection and, in some cases, genetic engineering or gene-editing techniques. Research has explored traits such as disease resistance, reduced bruising, altered starch composition, and reduced formation of acrylamide during frying. Acceptance and regulation of genetically modified potatoes differ across countries.</p>
+<h2 id="4-origin-and-history">4. Origin and history</h2>
+<h3 id="domestication-in-the-andes">Domestication in the Andes</h3>
+<p>Wild potato species occur across parts of the Americas, from the southern United States to southern Chile. Cultivated potatoes were domesticated by Indigenous peoples in the Andean region, particularly around southern Peru and northwestern Bolivia, near Lake Titicaca. Domestication is estimated to have begun around 7,000–10,000 years ago. Archaeological remains show that potatoes were being used in Peru thousands of years ago.</p>
+<p>The Andes remain a major center of potato diversity, with many traditional varieties adapted to local climates, elevations, soils, and farming practices. Indigenous knowledge and selection have played a central role in preserving this diversity.</p>
+<h3 id="spread-around-the-world">Spread around the world</h3>
+<p>Spanish colonizers introduced potatoes to Europe during the second half of the 16th century as part of the Columbian Exchange. Adoption was initially slow, but potatoes became an important crop and food source in Europe after the mid-18th century. They contributed to population growth and urbanization because they could produce substantial food yields.</p>
+<p>From Europe, potatoes spread through maritime travel, trade, colonial networks, and migration to many other regions. Modern potatoes grown in North America largely arrived through European settlement.</p>
+<h3 id="the-great-irish-famine">The Great Irish Famine</h3>
+<p>Potatoes became central to the diets of many poor rural communities, including in Ireland. In 1845, late blight—caused by the oomycete <em>Phytophthora infestans</em>—spread rapidly and destroyed potato crops in Ireland and parts of the Scottish Highlands. The resulting crop failures were a major cause of the Great Irish Famine. The disaster demonstrated the risks of relying heavily on a narrow range of genetically similar crops.</p>
+<h3 id="research-and-recognition">Research and recognition</h3>
+<p>The International Potato Center, based in Lima, Peru, conserves potato germplasm, including traditional landraces. Sequencing of the potato genome has helped researchers study its biology and improve breeding. The United Nations' International Day of Potato is observed on <strong>30 May</strong>, beginning in 2024, to recognize the crop's importance to food security, livelihoods, and culture.</p>
+<h2 id="5-potato-varieties-and-choosing-potatoes">5. Potato varieties and choosing potatoes</h2>
+<p>The article reports roughly 5,000 varieties worldwide, with a large concentration in the Andes. Varieties differ in skin and flesh color, shape, size, maturity, disease resistance, starch content, and storage behavior.</p>
+<h3 id="culinary-texture">Culinary texture</h3>
+<p>A practical distinction is between <strong>floury/mealy</strong> potatoes and <strong>waxy</strong> potatoes:</p>
+<ul>
+<li><strong>Floury or mealy potatoes</strong> generally have more starch and tend to break down more readily when cooked. They are often suitable for baking, roasting, and fluffy mashed potatoes.</li>
+<li><strong>Waxy potatoes</strong> tend to hold their shape after boiling and are useful for potato salads, soups, and dishes where intact pieces are desired.</li>
+<li><strong>All-purpose potatoes</strong> fall between these broad categories and can work in several preparations.</li>
+<li><strong>Chipping potatoes</strong> are selected for qualities suitable for making chips or crisps, such as appropriate shape, firmness, and processing characteristics.</li>
+<li><strong>New potatoes</strong> are harvested immature. They are usually small, tender, and lower in starch, with loose skins.</li>
+</ul>
+<p>These categories are guides rather than absolute rules. The best choice depends on the cultivar and the recipe.</p>
+<h3 id="color-and-appearance">Color and appearance</h3>
+<p>Cultivated potatoes may have white, cream, yellow, gold, red, purple, or blue skin and flesh. Yellow and gold colors can be associated with carotenoids. Red and blue pigmentation is largely associated with anthocyanins and other polyphenols. Color can be useful for identifying varieties, but it does not by itself determine the potato's cooking behavior or overall nutritional value.</p>
+<h3 id="examples-of-varieties-or-market-types">Examples of varieties or market types</h3>
+<ul>
+<li><strong>Yukon Gold:</strong> A yellow-fleshed type commonly sold in North America.</li>
+<li><strong>Red potatoes:</strong> Often sold as red-skinned, cream-fleshed potatoes.</li>
+<li><strong>Jersey Royal:</strong> A well-known new-potato type associated with Jersey in the United Kingdom.</li>
+<li><strong>Andean landraces:</strong> A broad range of traditional varieties grown in the Andes, often with distinctive colors and adaptations to local conditions.</li>
+</ul>
+<p>For a website, a variety guide could list each cultivar's skin and flesh color, texture, best uses, growing season, storage qualities, and regional availability.</p>
+<h2 id="6-growing-potatoes">6. Growing potatoes</h2>
+<h3 id="planting-material">Planting material</h3>
+<p>Potatoes are commonly grown from seed potatoes: tubers selected to produce healthy, consistent plants. Certified or carefully selected seed potatoes reduce the risk of carrying diseases into a crop. Potatoes can also be grown from botanical seeds in breeding programs, but tuber planting is the usual method for crop production.</p>
+<h3 id="growth-stages">Growth stages</h3>
+<p>Potato development can be divided into five broad phases:</p>
+<ol>
+<li><strong>Sprouting and rooting:</strong> Shoots emerge from the seed tuber and roots begin to grow.</li>
+<li><strong>Vegetative growth:</strong> Leaves and branches develop, photosynthesis increases, and underground stolons form.</li>
+<li><strong>Tuber initiation:</strong> Stolons begin to swell at their tips, creating young tubers; flowering may occur around this period.</li>
+<li><strong>Tuber bulking:</strong> The plant directs much of its energy into increasing tuber size. Soil moisture, temperature, nutrients, and pest pressure strongly influence yield.</li>
+<li><strong>Maturation:</strong> Leaves and stems age, tuber growth slows, and skins become firmer.</li>
+</ol>
+<h3 id="soil-and-climate">Soil and climate</h3>
+<p>Potatoes generally perform best in temperate conditions and well-drained soil. Commercial production commonly uses neutral to mildly acidic soils; the article gives a typical pH range around 6–7. Soil structure, moisture, nutrient balance, sunlight, and temperature affect yield. Potatoes are vulnerable to frost, while excessive heat can reduce growth and tuber quality. Temperatures above about 30 °C (86 °F) can be harmful.</p>
+<h3 id="planting-and-care">Planting and care</h3>
+<p>Commercial crops are planted in rows using machinery. Home gardeners can plant tubers in trenches, holes, containers, or growing bags, using free-draining soil or compost. Gardeners commonly cover the base of plants with additional soil or mulch as the shoots grow.</p>
+<p>Hilling or earthing up covers developing tubers and prevents light exposure, which can cause greening and increased glycoalkaloid levels. Adequate and even soil moisture is important, especially while tubers are bulking, but waterlogged soil is undesirable.</p>
+<h3 id="pests-and-diseases">Pests and diseases</h3>
+<p>Important potato pests and diseases include:</p>
+<ul>
+<li><strong>Late blight:</strong> Caused by <em>Phytophthora infestans</em>; historically responsible for devastating crop losses.</li>
+<li><strong>Rhizoctonia</strong> and <strong>powdery scab:</strong> Diseases that can affect plant growth or tuber quality.</li>
+<li><strong>Blackleg and related bacterial diseases:</strong> Can damage stems and plants.</li>
+<li><strong>Leafroll virus and other viruses:</strong> May reduce plant vigor and yield.</li>
+<li><strong>Colorado potato beetle:</strong> A major leaf-feeding insect capable of damaging entire crops.</li>
+<li><strong>Potato tuber moth:</strong> Can damage plants and tubers.</li>
+<li><strong>Aphids:</strong> Damage plants and transmit viruses.</li>
+<li><strong>Potato cyst nematodes:</strong> Microscopic pests that attack roots and may persist in soil for years.</li>
+</ul>
+<p>Crop rotation, healthy planting material, monitoring, resistant cultivars, sanitation, and locally appropriate integrated pest management can reduce risks. Specific treatment recommendations should be based on local agricultural guidance.</p>
+<h3 id="harvesting-and-curing">Harvesting and curing</h3>
+<p>Small crops can be harvested by hand or with simple tools. Commercial farms use potato harvesters that lift plants and soil, separate tubers from debris, and transport the crop for sorting. Potatoes are often cured after harvest under controlled warm, humid conditions to help skins set and wounds heal. This reduces moisture loss and the chance of infection during storage.</p>
+<h3 id="storage">Storage</h3>
+<p>Potatoes should be stored in a <strong>dark, well-ventilated place</strong>. Light exposure can cause greening and increase glycoalkaloids. Commercial long-term storage uses carefully controlled temperature, humidity, and ventilation to slow sprouting and prevent condensation. The article describes storage temperatures near 4 °C for some long-term commercial systems and higher temperatures for shorter-term storage; household advice may differ depending on local food-safety guidance and intended use.</p>
+<p>Very cold storage can convert some starch into sugars, changing flavor and cooking behavior and potentially increasing acrylamide formation during high-temperature cooking. Storage conditions should balance sprout control, quality, and intended processing use.</p>
+<h2 id="7-global-production-and-food-security">7. Global production and food security</h2>
+<p>Potatoes are a major food crop grown across temperate and many other suitable regions. Production has historically been important in Europe, while production growth in recent decades has been especially strong in Asia.</p>
+<p>The Wikipedia article's 2024 figures report:</p>
+<table>
+<thead>
+<tr>
+<th>Producer</th>
+<th style="text-align:right">Potato production in 2024</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>China</td>
+<td style="text-align:right">94.8 million tonnes</td>
+</tr>
+<tr>
+<td>India</td>
+<td style="text-align:right">57.1 million tonnes</td>
+</tr>
+<tr>
+<td>Ukraine</td>
+<td style="text-align:right">21.1 million tonnes</td>
+</tr>
+<tr>
+<td>United States</td>
+<td style="text-align:right">19.1 million tonnes</td>
+</tr>
+<tr>
+<td>Russia</td>
+<td style="text-align:right">18.4 million tonnes</td>
+</tr>
+<tr>
+<td><strong>World total</strong></td>
+<td style="text-align:right"><strong>390 million tonnes</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The article reports that the global harvested area in 2024 was about 17.1 million hectares. These are year-specific figures and should be verified against FAOSTAT or another authoritative agricultural database before being reused in a live website.</p>
+<p>Potatoes are important because they provide substantial food energy, can be grown in varied environments, and are consumed in many cultural cuisines. Their contribution to food security depends on seed quality, storage, transport, access to water, market conditions, and the ability to manage pests and diseases.</p>
+<h2 id="8-climate-change-and-the-future-of-potato-production">8. Climate change and the future of potato production</h2>
+<p>Climate change can affect potato yields through rising temperatures, changing rainfall, water stress, altered growing seasons, and changes in the distribution of pests and diseases.</p>
+<ul>
+<li>Potatoes generally grow best in temperate conditions.</li>
+<li>Heat can slow growth, reduce starch accumulation, damage tubers, and lower yields.</li>
+<li>Water shortages can be especially damaging during tuber formation and bulking.</li>
+<li>Frost and low temperatures can also limit growth and damage crops.</li>
+<li>Warmer conditions may allow some pests and pathogens to spread into new areas.</li>
+<li>The effects of late blight may increase in some regions and decrease in others, depending on local temperature and moisture patterns.</li>
+</ul>
+<p>Potential adaptation strategies include breeding for heat and drought tolerance, early maturation, disease resistance, improved water-use efficiency, and deeper root systems. Irrigation, improved agronomy, and shifting production toward cooler locations may also help, though they can create competition for land and water. Projections vary by region and depend on future climate, crop varieties, and adaptation.</p>
+<h2 id="9-nutrition">9. Nutrition</h2>
+<p>Potatoes are primarily a source of carbohydrates, especially starch. Their nutritional profile changes with variety, cooking method, whether the skin is eaten, and added ingredients such as oil, butter, salt, or sauces.</p>
+<section class="nutrition-calculator" aria-labelledby="nutrition-calculator-title">
+  <h3 id="nutrition-calculator-title">Potato nutrition calculator</h3>
+  <p>Choose a preparation and enter a serving weight to estimate its nutrients. Estimates are scaled from values per 100 g.</p>
+  <form id="nutrition-form" novalidate>
+    <div class="calculator-fields">
+      <div class="form-field">
+        <label for="potato-type">Preparation</label>
+        <select id="potato-type" name="potato-type" required>
+          <option value="potato_boiled_skin">Boiled, flesh and skin</option>
+          <option value="potato_raw_flesh_skin">Raw, flesh and skin</option>
+          <option value="potato_baked_skin">Baked, flesh and skin</option>
+          <option value="potato_mashed_plain">Mashed, plain</option>
+          <option value="potato_fries">French fries</option>
+          <option value="potato_chips">Plain salted chips</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label for="potato-grams">Amount to eat (grams)</label>
+        <input id="potato-grams" name="potato-grams" type="number" min="1" max="10000" step="any" inputmode="decimal" placeholder="e.g. 150" required aria-describedby="grams-help">
+        <small id="grams-help">Enter a value from 1 to 10,000 g.</small>
+      </div>
+    </div>
+    <button class="calculate-button" type="submit">Calculate nutrients</button>
+  </form>
+  <p id="nutrition-message" class="form-message" role="status" aria-live="polite">Loading nutrition data…</p>
+  <div id="nutrition-results" class="nutrition-results" hidden>
+    <h4 id="results-title">Estimated nutrition</h4>
+    <p id="results-description"></p>
+    <div class="results-table-wrap">
+      <table>
+        <caption class="visually-hidden">Estimated nutrients for the selected potato serving</caption>
+        <thead><tr><th scope="col">Nutrient</th><th scope="col">Estimated amount</th></tr></thead>
+        <tbody id="nutrition-results-body"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<h3 id="approximate-nutrition-per-100-g-of-boiled-potato-with-skin-without-salt">Approximate nutrition per 100 g of boiled potato with skin, without salt</h3>
+<table>
+<thead>
+<tr>
+<th>Nutrient</th>
+<th style="text-align:right">Approximate amount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Energy</td>
+<td style="text-align:right">87 kcal</td>
+</tr>
+<tr>
+<td>Water</td>
+<td style="text-align:right">77 g</td>
+</tr>
+<tr>
+<td>Carbohydrates</td>
+<td style="text-align:right">20.1 g</td>
+</tr>
+<tr>
+<td>Sugars</td>
+<td style="text-align:right">0.9 g</td>
+</tr>
+<tr>
+<td>Dietary fiber</td>
+<td style="text-align:right">1.8 g</td>
+</tr>
+<tr>
+<td>Protein</td>
+<td style="text-align:right">1.9 g</td>
+</tr>
+<tr>
+<td>Fat</td>
+<td style="text-align:right">0.1 g</td>
+</tr>
+<tr>
+<td>Vitamin B6</td>
+<td style="text-align:right">0.3 mg</td>
+</tr>
+<tr>
+<td>Vitamin C</td>
+<td style="text-align:right">13 mg</td>
+</tr>
+<tr>
+<td>Potassium</td>
+<td style="text-align:right">379 mg</td>
+</tr>
+<tr>
+<td>Magnesium</td>
+<td style="text-align:right">22 mg</td>
+</tr>
+<tr>
+<td>Phosphorus</td>
+<td style="text-align:right">44 mg</td>
+</tr>
+<tr>
+<td>Iron</td>
+<td style="text-align:right">0.31 mg</td>
+</tr>
+</tbody>
+</table>
+<p>The source's nutrition table also lists small amounts of other B vitamins and minerals. Values are approximate and should be presented as reference values rather than universal measurements.</p>
+<h3 id="nutritional-context">Nutritional context</h3>
+<ul>
+<li>Potatoes provide energy mainly through carbohydrates.</li>
+<li>They contain very little fat when boiled without added ingredients.</li>
+<li>They provide vitamin C, vitamin B6, some other B vitamins, and potassium.</li>
+<li>Eating the skin contributes dietary fiber.</li>
+<li>Cooking method matters: deep-frying and high-fat toppings can substantially increase energy and fat content.</li>
+<li>The glycemic index varies by cultivar, preparation, and cooking method. Some potato preparations can cause a relatively rapid rise in blood glucose.</li>
+<li>Raw potato starch is poorly digested, so potatoes are generally eaten cooked.</li>
+</ul>
+<p>The Wikipedia article notes that evidence on the relationship between potato consumption and obesity or diabetes is not definitive. A website should avoid making medical claims and should distinguish the plain potato from the nutritional profile of a prepared dish.</p>
+<h2 id="10-toxicity-and-safe-handling">10. Toxicity and safe handling</h2>
+<p>Potatoes contain natural glycoalkaloids, especially <strong>solanine</strong> and <strong>chaconine</strong>, which help protect the plant from pests. These compounds are concentrated in the plant's above-ground parts and are normally present at low levels in properly grown and stored edible tubers.</p>
+<p>Light exposure, greening, physical damage, and age can increase glycoalkaloid levels. Sprouts and green areas may contain higher concentrations. Cooking does not reliably make a heavily green or toxic potato safe.</p>
+<p>Practical safety guidance:</p>
+<ul>
+<li>Store potatoes in a cool, dark, well-ventilated location.</li>
+<li>Avoid eating potatoes that are substantially green, badly damaged, or heavily sprouted.</li>
+<li>Remove small sprouts and affected areas only when the potato otherwise appears sound; discard potatoes with extensive greening or deterioration.</li>
+<li>Do not eat the plant's green fruits or other above-ground parts.</li>
+<li>When uncertain about a potato's condition, discard it rather than risk poisoning.</li>
+</ul>
+<p>For a public-facing website, safety advice should be reviewed against current food-safety guidance from relevant public-health authorities.</p>
+<h2 id="11-culinary-uses-around-the-world">11. Culinary uses around the world</h2>
+<p>Potatoes are prepared in many ways: boiled, steamed, baked, roasted, mashed, fried, grated, dried, and processed into flour or starch. Their texture and starch content influence which preparation works best.</p>
+<h3 id="familiar-preparations">Familiar preparations</h3>
+<ul>
+<li>French fries or chips</li>
+<li>Potato crisps</li>
+<li>Baked potatoes</li>
+<li>Mashed potatoes</li>
+<li>Roasted potatoes</li>
+<li>Boiled new potatoes</li>
+<li>Potato salad</li>
+<li>Soups and stews</li>
+<li>Potato pancakes and fritters</li>
+<li>Dumplings and pasta-like preparations</li>
+</ul>
+<h3 id="regional-examples">Regional examples</h3>
+<ul>
+<li><strong>Peru and Bolivia:</strong> Potatoes are central to Andean food traditions. <em>Chuño</em> is a traditional freeze-dried potato product associated with Quechua and Aymara communities.</li>
+<li><strong>United Kingdom:</strong> Fish and chips, roast potatoes, mashed potatoes, and other traditional dishes feature potatoes.</li>
+<li><strong>Germany and Northern and Eastern Europe:</strong> Boiled new potatoes, often served with dill and fish, are traditional in various regions.</li>
+<li><strong>Lithuania:</strong> <em>Cepelinai</em> are potato-based dumplings, often filled with meat.</li>
+<li><strong>Italy:</strong> Potatoes are used to make gnocchi in some regional cuisines.</li>
+<li><strong>China:</strong> Thinly sliced potato stir-fries and roasted potatoes are among the many local preparations.</li>
+<li><strong>Jewish, Lithuanian, and Belarusian cuisines:</strong> Grated-potato puddings and baked dishes include kugel, kugelis, and potato babka.</li>
+</ul>
+<p>A recipe section on a potato website could organize dishes by cooking method, region, potato texture, preparation time, and dietary needs.</p>
+<h2 id="12-uses-beyond-everyday-cooking">12. Uses beyond everyday cooking</h2>
+<p>Potatoes and their components have several non-table-food uses:</p>
+<ul>
+<li><strong>Potato starch:</strong> Used as a thickener or binder in foods such as soups and sauces.</li>
+<li><strong>Industrial starch:</strong> Used in paper and board manufacturing and as an adhesive in textile applications.</li>
+<li><strong>Distilled spirits:</strong> Potatoes have been used as a raw material for spirits such as vodka, poitín, akvavit, and brännvin.</li>
+<li><strong>Animal feed:</strong> Potatoes may be fed to livestock or preserved as silage.</li>
+<li><strong>Scientific research:</strong> Potato tissue is used in plant research, including studies of wound responses and cellular processes.</li>
+</ul>
+<h2 id="13-cultural-significance-and-representation">13. Cultural significance and representation</h2>
+<p>The potato is more than an agricultural commodity; it is connected to Indigenous traditions, regional identity, art, popular culture, and stories about food security.</p>
+<h3 id="mythology-and-indigenous-traditions">Mythology and Indigenous traditions</h3>
+<p>In Inca mythology, Axomamma is a goddess associated with potatoes and agricultural fertility. The Wikipedia article also describes a Haudenosaunee (Iroquois) story in which potatoes grow from Earth Woman after her death. Such stories should be presented with cultural context and reliable references rather than treated as interchangeable traditions.</p>
+<h3 id="art">Art</h3>
+<p>Potatoes and potato harvesting appear in works depicting rural life and labor. Vincent van Gogh's <em>The Potato Eaters</em> (1885) portrays a family sharing a meal. Jean-François Millet's <em>The Potato Harvest</em> and other European paintings show the crop's relationship to peasant work and survival. Potato imagery also appears in pre-Columbian Andean art, including Moche ceramics.</p>
+<h3 id="popular-culture">Popular culture</h3>
+<ul>
+<li><strong>Mr. Potato Head:</strong> A toy introduced commercially in the early 1950s, consisting of a potato-shaped body and attachable facial features and accessories.</li>
+<li><strong>The Martian (2015):</strong> The fictional astronaut and botanist Mark Watney grows potatoes while stranded on Mars, using the crop as a symbol of practical survival and food production under extreme conditions.</li>
+</ul>
+<h2 id="14-suggested-website-structure">14. Suggested website structure</h2>
+<p>The following structure turns the summary into a navigable educational website.</p>
+<ol>
+<li>
+<p><strong>Home</strong></p>
+<ul>
+<li>Short introduction and key facts</li>
+<li>Hero image showing a variety of potatoes</li>
+<li>Links to history, varieties, cultivation, nutrition, and recipes</li>
+</ul>
+</li>
+<li>
+<p><strong>About the Potato</strong></p>
+<ul>
+<li>Scientific classification</li>
+<li>Plant anatomy</li>
+<li>Explanation of tubers, eyes, stolons, and lenticels</li>
+<li>Glossary of potato terminology</li>
+</ul>
+</li>
+<li>
+<p><strong>History</strong></p>
+<ul>
+<li>Andean domestication</li>
+<li>Indigenous agricultural knowledge</li>
+<li>Introduction to Europe and global spread</li>
+<li>Great Irish Famine and late blight</li>
+<li>Modern research and International Day of Potato</li>
+</ul>
+</li>
+<li>
+<p><strong>Varieties</strong></p>
+<ul>
+<li>Skin and flesh colors</li>
+<li>Floury, waxy, and all-purpose textures</li>
+<li>Examples of cultivars</li>
+<li>A searchable variety comparison table</li>
+</ul>
+</li>
+<li>
+<p><strong>Growing Potatoes</strong></p>
+<ul>
+<li>Seed potatoes and planting</li>
+<li>Growth stages</li>
+<li>Soil, water, temperature, and sunlight</li>
+<li>Hilling, harvesting, curing, and storage</li>
+<li>Pests, diseases, and crop rotation</li>
+</ul>
+</li>
+<li>
+<p><strong>Nutrition and Safety</strong></p>
+<ul>
+<li>Nutrition table with serving size and source</li>
+<li>Effect of cooking methods</li>
+<li>Glycemic-index caveats</li>
+<li>Glycoalkaloid safety and storage guidance</li>
+</ul>
+</li>
+<li>
+<p><strong>Potatoes Around the World</strong></p>
+<ul>
+<li>Production by country and year</li>
+<li>Regional dishes and food traditions</li>
+<li>Food security and crop resilience</li>
+</ul>
+</li>
+<li>
+<p><strong>Recipes and Cooking</strong></p>
+<ul>
+<li>Recipes grouped by cooking method</li>
+<li>Guidance on choosing potato types</li>
+<li>Regional dishes and traditional preparations</li>
+</ul>
+</li>
+<li>
+<p><strong>Industrial and Scientific Uses</strong></p>
+<ul>
+<li>Starch applications</li>
+<li>Animal feed and spirits</li>
+<li>Research uses</li>
+</ul>
+</li>
+<li>
+<p><strong>Culture and Media</strong></p>
+<ul>
+<li>Mythology and Indigenous traditions</li>
+<li>Artworks</li>
+<li>Popular culture</li>
+</ul>
+</li>
+<li>
+<p><strong>Sources and Further Reading</strong></p>
+<ul>
+<li>Wikipedia article</li>
+<li>FAOSTAT production data</li>
+<li>International Potato Center</li>
+<li>Botanical and agricultural research</li>
+<li>Government food-safety and nutrition references</li>
+</ul>
+</li>
+</ol>
+<h2 id="15-suggested-visuals-and-interactive-elements">15. Suggested visuals and interactive elements</h2>
+<ul>
+<li>Botanical illustration labeling the plant, stolons, tubers, eyes, and leaves.</li>
+<li>Photo gallery of potatoes in different shapes, colors, and sizes.</li>
+<li>Timeline of domestication, global spread, and major historical events.</li>
+<li>World map showing production by country for a selected year.</li>
+<li>Comparison table for floury, waxy, and all-purpose potatoes.</li>
+<li>Growth-stage diagram from sprouting through maturation.</li>
+<li>Pest and disease identification gallery, with local caveats.</li>
+<li>Nutrition comparison for common cooking methods, based on a consistent database.</li>
+<li>Regional food gallery linking dishes to places and cultural context.</li>
+<li>Glossary with short definitions of botanical and agricultural terms.</li>
+</ul>
+<p>Use properly licensed images, captions, alt text, and attribution. Charts should state the data year and source. Interactive maps and data should not imply that historical figures are current.</p>
+<h2 id="16-editorial-and-fact-checking-guidance">16. Editorial and fact-checking guidance</h2>
+<p>Before publishing this material:</p>
+<ul>
+<li>Verify global production figures against the latest FAOSTAT data.</li>
+<li>Date-stamp numerical claims that can change over time.</li>
+<li>Use authoritative sources for nutrition values, food safety, and growing instructions.</li>
+<li>Treat climate projections as estimates that depend on assumptions and geography.</li>
+<li>Avoid presenting all potatoes as nutritionally identical; cultivar and preparation matter.</li>
+<li>Distinguish botanical seeds from seed potatoes.</li>
+<li>Explain that the edible tuber is a stem, not a root.</li>
+<li>Do not imply that cooking makes heavily green or damaged potatoes safe.</li>
+<li>Provide cultural context and appropriate sources for Indigenous stories and traditions.</li>
+<li>Check the current status of named varieties, genetic-engineering approvals, and regulations before describing them as current.</li>
+</ul>
+<h2 id="17-primary-and-supplementary-sources">17. Primary and supplementary sources</h2>
+<ul>
+<li><strong>Primary source for this summary:</strong> <a href="https://en.wikipedia.org/wiki/Potato">Potato — Wikipedia</a></li>
+<li><strong>Global production statistics:</strong> <a href="https://www.fao.org/faostat/">FAOSTAT</a></li>
+<li><strong>Potato research and germplasm:</strong> <a href="https://cipotato.org/">International Potato Center (CIP)</a></li>
+<li><strong>Botanical reference:</strong> <a href="https://www.kew.org/">Royal Botanic Gardens, Kew</a></li>
+<li><strong>Nutrition data:</strong> <a href="https://fdc.nal.usda.gov/">USDA FoodData Central</a></li>
+</ul>
+<p>This document is intended as a content brief for a website. It should be supplemented with direct references and reviewed for accuracy before publication, particularly where health, safety, agriculture, regulations, or current statistics are involved.</p>
+
+<script src="app.js" defer></script>
+</body>
+</html>
